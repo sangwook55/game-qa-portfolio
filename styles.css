@@ -1,0 +1,124 @@
+:root {
+  color-scheme: dark;
+  --background: #020811;
+  --border: rgba(86, 215, 210, 0.22);
+  --accent: #42d3cb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  min-width: 20rem;
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 50% 0, rgba(34, 93, 111, 0.12), transparent 34rem),
+    var(--background);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portfolio {
+  display: grid;
+  gap: clamp(0.65rem, 1.8vw, 1.75rem);
+  width: min(100%, 112rem);
+  margin: 0 auto;
+  padding: clamp(0.5rem, 2vw, 2rem);
+}
+
+.slide-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 841.92 / 594.96;
+  overflow: hidden;
+  scroll-margin-top: clamp(0.5rem, 2vw, 2rem);
+  background: #071523;
+  border: 1px solid var(--border);
+  box-shadow: 0 1.25rem 3.5rem rgba(0, 0, 0, 0.32);
+}
+
+.slide-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hotspot {
+  position: absolute;
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 0.1rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hotspot--projects {
+  left: 6.3%;
+  top: 66.7%;
+  width: 12.3%;
+  height: 5.6%;
+}
+
+.hotspot--skills {
+  left: 19.5%;
+  top: 66.7%;
+  width: 12.3%;
+  height: 5.6%;
+}
+
+.hotspot--case {
+  left: 77.9%;
+  top: 30.2%;
+  width: 13.5%;
+  height: 5.7%;
+}
+
+.hotspot--bug {
+  left: 77.9%;
+  top: 64.7%;
+  width: 13.5%;
+  height: 5.8%;
+}
+
+.hotspot:hover,
+.hotspot:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.92);
+  outline-offset: -3px;
+  box-shadow: 0 0 1.25rem rgba(66, 211, 203, 0.75);
+}
+
+@media (max-width: 700px) {
+  .portfolio {
+    gap: 0.35rem;
+    padding: 0;
+  }
+
+  .slide-frame {
+    border-right: 0;
+    border-left: 0;
+    scroll-margin-top: 0;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
